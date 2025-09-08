@@ -7,7 +7,7 @@ from langchain import LLMChain
 
 import os 
 
-os.environ['GOOGLE_API_KEY'] ="AIzaSyD91RmsgcvRu56slhMB3aOwxrsAfj7jJIc"
+os.environ['GOOGLE_API_KEY'] =""
 
 # Using Google Models (Gemini Pro)
 
@@ -46,6 +46,7 @@ number = st.number_input("Number of tweets", min_value = 1, max_value = 10, valu
 if st.button("Generate"):
     tweets = tweet_chain.invoke({"number" : number, "topic" : topic})
     st.write(tweets.content)
+
 
 
 
