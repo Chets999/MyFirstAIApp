@@ -21,7 +21,7 @@ gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
 
 
 
-tweet_template = "Give me {number} tweets on {topic}"
+tweet_template = "Give me {number} tweets on {topic} in Kanglish"
 
 tweet_prompt = PromptTemplate(template=tweet_template, input_variables=['number','topic']) 
 
@@ -46,5 +46,6 @@ number = st.number_input("Number of tweets", min_value = 1, max_value = 10, valu
 if st.button("Generate"):
     tweets = tweet_chain.invoke({"number" : number, "topic" : topic})
     st.write(tweets.content)
+
 
 
